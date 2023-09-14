@@ -1,6 +1,7 @@
 import { fetchBreeds, fetchCatByBreed } from "./cat-api" ;
 import './styles.css';
-import SlimSelect from 'slim-select'
+import SlimSelect from 'slim-select';
+import 'slim-select/dist/slimselect.css';
 import Notiflix from 'notiflix';
 
 import axios from "axios";
@@ -27,10 +28,13 @@ fetchBreeds().then(function (response) {
       )
       .join("");
       container.insertAdjacentHTML("beforeend", markup);
-      
+           
   }
+      renderList(response.data, selectInput);
   
-  renderList(response.data, selectInput);
+      new SlimSelect({
+        select: selectInput,
+        })
  
   })
   .catch(function (error) {
