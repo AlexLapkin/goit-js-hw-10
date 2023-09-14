@@ -1,5 +1,5 @@
-import { fetchBreeds, fetchCatByBreed } from "./cat-api" ;
-import './styles.css';
+import { fetchBreeds, fetchCatByBreed } from "./js/cat-api" ;
+import './css/styles.css';
 import SlimSelect from 'slim-select';
 import 'slim-select/dist/slimselect.css';
 import Notiflix from 'notiflix';
@@ -14,7 +14,6 @@ const pLoader = document.querySelector('.loader');
 const pError = document.querySelector('.error');
 
 pError.classList.add("is-hidden");
-selectInput.classList.add("is-hidden");
 
 fetchBreeds().then(function (response) {
         
@@ -28,7 +27,7 @@ fetchBreeds().then(function (response) {
       )
       .join("");
       container.insertAdjacentHTML("beforeend", markup);
-           
+      selectInput.classList.remove("is-hidden");
   }
       renderList(response.data, selectInput);
   
@@ -39,13 +38,11 @@ fetchBreeds().then(function (response) {
   })
   .catch(function (error) {
     pLoader.classList.add("is-hidden");
-    selectInput.classList.add("is-hidden");
     Notiflix.Notify.failure('Oops! Something went wrong! Try reloading the page!', {
       position: 'center-center',
-      timeout: 10000,
+      timeout: 3000,
     })
   }) ;
-
 
   const onChange = (event) => {
   pLoader.classList.remove("is-hidden");
@@ -71,11 +68,11 @@ fetchBreeds().then(function (response) {
 
   })
      .catch(function (error) {
-      selectInput.classList.add("is-hidden");
+      //selectInput.classList.add("is-hidden");
       pLoader.classList.add("is-hidden");
       Notiflix.Notify.failure('Oops! Something went wrong! Try reloading the page!', {
         position: 'center-center',
-        timeout: 10000,
+        timeout: 3000,
       })
     })
   }
