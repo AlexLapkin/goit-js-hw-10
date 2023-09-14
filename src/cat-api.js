@@ -4,8 +4,6 @@ const API_KEY = 'live_98IPYpuaXNQmBrmfnPSpTkLI0G1ltTpNfVioWIJVFlUakqmyyfLDigUw4o
 
 axios.defaults.headers.common["x-api-key"] = "API_KEY";
 
-// Делаем запрос через метод GET axios
-//const axios = require('axios');
 const BASE_URL = 'https://api.thecatapi.com/v1'
 
 export function fetchBreeds() {
