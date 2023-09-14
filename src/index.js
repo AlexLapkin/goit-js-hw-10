@@ -39,6 +39,7 @@ fetchBreeds().then(function (response) {
   })
   .catch(function (error) {
     pLoader.classList.add("is-hidden");
+    selectInput.classList.add("is-hidden");
     Notiflix.Notify.failure('Oops! Something went wrong! Try reloading the page!', {
       position: 'center-center',
       timeout: 10000,
