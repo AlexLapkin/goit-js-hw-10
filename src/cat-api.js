@@ -1,6 +1,6 @@
 import axios from "axios";
 
-axios.defaults.headers.common["x-api-key"] = "live_98IPYpuaXNQmBrmfnPSpTkLI0G1ltTpNfVioWIJVFlUakqmyyfLDigUw4o6jf8nw";
+axios.headers.common["x-api-key"] = "live_98IPYpuaXNQmBrmfnPSpTkLI0G1ltTpNfVioWIJVFlUakqmyyfLDigUw4o6jf8nw";
 
 // Делаем запрос через метод GET axios
 const axios = require('axios');
